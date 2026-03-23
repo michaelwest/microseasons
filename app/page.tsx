@@ -32,14 +32,13 @@ export default async function HomePage() {
 
         <div className="season-grid">
           <section className="card">
-            <p className="season-kicker">Shifted Japanese Kō</p>
+            <p className="season-kicker">Time-Shifted Japanese Kō</p>
             <h2 className="season-title">{context.shiftedJapaneseWindow.japaneseTitle}</h2>
           </section>
 
           <section className="card">
-            <p className="season-kicker">Sydney Suggestion</p>
+            <p className="season-kicker">Sydney Microseason Suggestion</p>
             <h2 className="season-title">{context.currentWindow.australiaTitle}</h2>
-            <p className="season-copy">{localDescription}</p>
           </section>
         </div>
 

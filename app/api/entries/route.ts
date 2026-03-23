@@ -26,7 +26,6 @@ export async function POST(request: Request) {
   const context = getCurrentMicroseasonContext();
   const entry: StoredDescription = {
     id: randomUUID(),
-    name: parsed.data.name,
     description: parsed.data.description,
     submittedAt: new Date().toISOString(),
     windowId: context.currentWindow.windowId,

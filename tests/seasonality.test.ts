@@ -25,7 +25,7 @@ describe("validation", () => {
   });
 
   it("rejects empty collaborative entry fields", () => {
-    expect(entryInputSchema.safeParse({ name: "", description: "" }).success).toBe(false);
+    expect(entryInputSchema.safeParse({ description: "" }).success).toBe(false);
   });
 
   it("rejects a blank seasonality observation", () => {

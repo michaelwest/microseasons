@@ -51,10 +51,9 @@ export function ObservationForm() {
   return (
     <section className="card">
       <p className="season-kicker">Seasonality Check</p>
-      <h2>Ask whether an observation is truly seasonal</h2>
+      <h2>Ask whether an observation is truly seasonal.</h2>
       <form className="form-grid" onSubmit={onSubmit}>
         <div className="field">
-          <label htmlFor="observation">Observation</label>
           <input
             id="observation"
             name="observation"
@@ -78,10 +77,7 @@ export function ObservationForm() {
           <span className="badge">{LABELS[assessment.classification]}</span>
           <p>{assessment.reason}</p>
         </div>
-      ) : null}
-      <p className="footer-note">
-        The model gives a practical seasonal bucket for Sydney conditions, not a scientific certainty.
-      </p>
+      ) : null} 
     </section>
   );
 }

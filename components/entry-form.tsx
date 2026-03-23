@@ -19,7 +19,6 @@ const initialState: SubmitState = {
 
 export function EntryForm({ initialEntries }: EntryFormProps) {
   const [entries, setEntries] = useState(initialEntries);
-  const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [submitState, setSubmitState] = useState(initialState);
   const [isPending, setIsPending] = useState(false);
@@ -35,7 +34,7 @@ export function EntryForm({ initialEntries }: EntryFormProps) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, description }),
+        body: JSON.stringify({ description }),
       });
 
       const payload = (await response.json()) as
@@ -51,7 +50,6 @@ export function EntryForm({ initialEntries }: EntryFormProps) {
       }
 
       setEntries((current) => [payload.entry, ...current]);
-      setName("");
       setDescription("");
       setSubmitState({
         message: "Your description has been added.",
@@ -70,19 +68,8 @@ export function EntryForm({ initialEntries }: EntryFormProps) {
   return (
     <section className="card">
       <p className="season-kicker">Collaborative Notes</p>
-      <h2>Describe this microseason in your own words</h2>
+      <h2>Describe this microseason in your own words.</h2>
       <form className="form-grid" onSubmit={onSubmit}>
-        <div className="field">
-          <label htmlFor="name">Name</label>
-          <input
-            id="name"
-            name="name"
-            autoComplete="name"
-            maxLength={80}
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-          />
-        </div>
         <div className="field">
           <label htmlFor="description">What feels seasonal right now?</label>
           <textarea
@@ -108,7 +95,7 @@ export function EntryForm({ initialEntries }: EntryFormProps) {
           entries.map((entry) => (
             <article className="entry" key={entry.id}>
               <header>
-                <strong>{entry.name}</strong>
+                <strong>Shared observation</strong>
                 <time dateTime={entry.submittedAt}>
                   {new Intl.DateTimeFormat("en-AU", {
                     dateStyle: "medium",

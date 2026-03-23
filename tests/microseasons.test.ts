@@ -14,6 +14,14 @@ describe("microseason date mapping", () => {
     expect(getWindowIndexForDayOfYear(7)).toBe(1);
   });
 
+  it("maps March 23 into the window that contains it", () => {
+    const context = getMicroseasonContextForDate(2026, 3, 23);
+
+    expect(context.currentWindowRangeLabel).toBe("23 to 27 March");
+    expect(context.currentWindow.startDayOfYear).toBeLessThanOrEqual(context.dayOfYear);
+    expect(context.currentWindow.endDayOfYear).toBeGreaterThanOrEqual(context.dayOfYear);
+  });
+
   it("maps the last day of a common year into the final window", () => {
     const dayOfYear = getDayOfYear(2025, 12, 31);
     expect(dayOfYear).toBe(365);
@@ -37,7 +45,7 @@ describe("microseason date mapping", () => {
   it("resolves a current and shifted window for a fixed Sydney date", () => {
     const context = getMicroseasonContextForDate(2026, 10, 10);
 
-    expect(context.currentWindow.windowId).toBe("window-56");
+    expect(context.currentWindow.windowId).toBe("window-57");
     expect(context.shiftedDateIso).toBe("2027-04-10");
     expect(context.shiftedJapaneseWindow.windowId).toBe("window-20");
   });

@@ -234,19 +234,26 @@ function formatRangeLabel(
   endMonth: number,
   endDay: number,
 ) {
+  if (startMonth === endMonth) {
+    const end = new Date(Date.UTC(year, endMonth - 1, endDay, 12));
+    const monthLabel = new Intl.DateTimeFormat("en-AU", {
+      timeZone: "Australia/Sydney",
+      month: "long",
+    }).format(end);
+
+    return `${startDay} to ${endDay} ${monthLabel}`;
+  }
+
   const start = new Date(Date.UTC(year, startMonth - 1, startDay, 12));
   const end = new Date(Date.UTC(year, endMonth - 1, endDay, 12));
-  const sameMonth = startMonth === endMonth;
-
   const startLabel = new Intl.DateTimeFormat("en-AU", {
     timeZone: "Australia/Sydney",
     month: "long",
     day: "numeric",
   }).format(start);
-
   const endLabel = new Intl.DateTimeFormat("en-AU", {
     timeZone: "Australia/Sydney",
-    month: sameMonth ? undefined : "long",
+    month: "long",
     day: "numeric",
   }).format(end);
 
@@ -254,7 +261,7 @@ function formatRangeLabel(
 }
 
 export function getWindowIndexForDayOfYear(dayOfYear: number, totalDays = 365): number {
-  return Math.min(Math.floor(((dayOfYear - 1) * 72) / totalDays), 71);
+  return Math.min(Math.floor(((dayOfYear * 72) - 1) / totalDays), 71);
 }
 
 export function getWindowBoundsForIndex(year: number, index: number) {

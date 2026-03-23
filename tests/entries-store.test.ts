@@ -23,7 +23,6 @@ describe("entry storage", () => {
 
     const older: StoredDescription = {
       id: "older",
-      name: "Alex",
       description: "The cicadas have only just started.",
       submittedAt: "2026-01-10T10:00:00.000Z",
       windowId: "window-02",

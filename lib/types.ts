@@ -23,7 +23,6 @@ export type MicroseasonContext = {
 
 export type StoredDescription = {
   id: string;
-  name: string;
   description: string;
   submittedAt: string;
   windowId: string;
