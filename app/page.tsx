@@ -13,12 +13,7 @@ export default async function HomePage() {
   return (
     <main className="page-shell">
       <section className="hero">
-        <p className="eyebrow">Sydney Microseasons</p>
-        <h1>Read the year in smaller pieces.</h1>
-        <p>
-          Today is anchored to a five-day kō-style window, a six-month-shifted Japanese microseason,
-          and a Sydney-specific seasonal cue written for this app.
-        </p>
+        <h1>Sydney Microseasons</h1>
       </section>
 
       <div className="stack">
@@ -27,21 +22,18 @@ export default async function HomePage() {
           <div className="date-chip">
             <span>{context.todayLabel}</span>
           </div>
-          <h2>{context.currentWindowRangeLabel}</h2>
-          <p className="season-copy">
-            Window {context.currentWindow.windowIndex + 1} of 72, aligned to the roughly five-day
-            rhythm of the traditional Japanese microseason calendar.
-          </p>
+          <div className="date-chip">
+            {context.currentWindowRangeLabel}
+          </div>
+          <div className="date-chip">
+            Window {context.currentWindow.windowIndex + 1} of 72
+          </div>
         </section>
 
         <div className="season-grid">
           <section className="card">
             <p className="season-kicker">Shifted Japanese Kō</p>
             <h2 className="season-title">{context.shiftedJapaneseWindow.japaneseTitle}</h2>
-            <p className="season-copy">
-              This uses the canonical Japanese window mapped to the date six months from Sydney&apos;s
-              current day: <strong>{context.shiftedDateIso}</strong>.
-            </p>
           </section>
 
           <section className="card">
