@@ -2,7 +2,6 @@ export type DharawalSeason = {
   id: string;
   title: string;
   monthsLabel: string;
-  summary: string;
   indicators: string[];
   startMonth: number;
   startDay: number;
@@ -20,13 +19,12 @@ const DHARAWAL_SEASONS: DharawalSeason[] = [
     id: "burran",
     title: "Time of Burran",
     monthsLabel: "January to March",
-    summary:
-      "Hot and dry, with male kangaroos becoming aggressive and weetjellan blooming as a sign of storms and caution with fire.",
     indicators: [
       "Gadalung Marool - hot and dry",
       "Male kangaroos aggressive",
-      "Meat forbidden",
-      "Weetjellan blooming",
+      "Eating meat is forbidden because the heat means it does not keep well and food poisoning becomes a risk",
+      "Weetjellan blooming means fires should only be lit on sand and well away from bushland",
+      "Weetjellan also signals violent storms and heavy rain, so camping near creeks and rivers is not recommended",
     ],
     startMonth: 1,
     startDay: 1,
@@ -37,12 +35,12 @@ const DHARAWAL_SEASONS: DharawalSeason[] = [
     id: "marraigang",
     title: "Time of Marrai'gang",
     monthsLabel: "April to June",
-    summary:
-      "Wet weather becomes cooler, quolls seek mates, and lilly pilly ripening marks the turn toward the colder season.",
     indicators: [
       "Bana'murrai'yung - wet becoming cooler",
-      "Quolls seeking mates",
-      "Lilly pilly ripens",
+      "The cries of marrai'gang, the quoll, can be heard through forests and woodlands as mates are sought",
+      "Lilly pilly ripens on the trees",
+      "When the fruit starts to fall, it is time to mend old warm cloaks or make new ones",
+      "The falling fruit also signals the yearly trek toward the coastal areas",
     ],
     startMonth: 4,
     startDay: 1,
@@ -53,13 +51,11 @@ const DHARAWAL_SEASONS: DharawalSeason[] = [
     id: "burrugin",
     title: "Time of Burrugin",
     monthsLabel: "June to late July",
-    summary:
-      "Cold, frosty short days, echidna mating activity, and burringoa flowering mark this season.",
     indicators: [
       "Tugarah Tuli - cold, frosty, short days",
-      "Echidna seeking mates",
-      "Burringoa flowering",
-      "Shellfish forbidden",
+      "Male echidnas form lines of up to 10 and follow a female through the woodlands to wear her down and mate",
+      "Burringoa flowering signals it is time to collect nectar from certain plants for ceremonies next season",
+      "Shellfish must not be eaten again until the boo'kerrikin blooms",
     ],
     startMonth: 7,
     startDay: 1,
@@ -70,12 +66,10 @@ const DHARAWAL_SEASONS: DharawalSeason[] = [
     id: "wiritjiribin",
     title: "Time of Wiritjiribin",
     monthsLabel: "August",
-    summary:
-      "Cold and windy weather, lyrebird mound-building, flowering signs, and gentle spring rains define this month.",
     indicators: [
       "Tugarah Gunya'marri - cold and windy",
-      "Lyrebird building mounds",
-      "Marrai'uo flowering",
+      "The lyrebird's calls ring through the bushland while he builds dancing mounds to attract mates",
+      "Marrai'uo flowering signals that fish are swimming in the rivers",
       "Boo'kerrikin flowering",
       "Gentle spring rains",
     ],
@@ -88,13 +82,12 @@ const DHARAWAL_SEASONS: DharawalSeason[] = [
     id: "ngoonungi",
     title: "Time of Ngoonungi",
     monthsLabel: "September to October",
-    summary:
-      "Cool weather warms, flying foxes gather overhead, and waratah flowering marks an important ceremonial time.",
     indicators: [
       "Murrai'yunggory - cool, getting warmer",
-      "Flying foxes appear",
-      "Ceremonial time",
-      "Miwa gawaian in flower",
+      "Flying foxes gather in the darkening skies over D'harawal lands just after sunset",
+      "They arrive from the north-east, north, north-west and west, then head south to nighttime feeding grounds",
+      "This is an important ceremonial time",
+      "The blooming of bright red miwa gawaian, the New South Wales Waratah, marks its beginning",
     ],
     startMonth: 9,
     startDay: 1,
@@ -105,12 +98,12 @@ const DHARAWAL_SEASONS: DharawalSeason[] = [
     id: "parradowee",
     title: "Time of Parra'dowee",
     monthsLabel: "November to December",
-    summary:
-      "Warm and wet conditions settle in, summer heat begins, and stable weather marks the season.",
     indicators: [
       "Goray'murrai - warm and wet",
       "Summer heat starts",
       "Stable weather",
+      "The Great Eel Spirit is said to call his children, and the eels move down rivers and creeks to the ocean to mate",
+      "Kai'arrewan, the Coast Myall, blooming indicates fish in the bays and estuaries",
     ],
     startMonth: 11,
     startDay: 1,

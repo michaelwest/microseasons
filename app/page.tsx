@@ -2,14 +2,13 @@ import { EntryForm } from "@/components/entry-form";
 import { ObservationForm } from "@/components/observation-form";
 import { DHARAWAL_CALENDAR_SOURCE, getDharawalSeason } from "@/lib/dharawal";
 import { readEntries } from "@/lib/entries-store";
-import { getAustralianDescription, getCurrentMicroseasonContext } from "@/lib/microseasons";
+import { getCurrentMicroseasonContext } from "@/lib/microseasons";
 
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const context = getCurrentMicroseasonContext();
   const entries = await readEntries();
-  const localDescription = getAustralianDescription(context.currentWindow.windowIndex);
   const dharawalSeason = getDharawalSeason(context.month, context.day);
 
   return (
@@ -41,20 +40,23 @@ export default async function HomePage() {
           <section className="card">
             <p className="season-kicker">Sydney Microseason</p>
             <h2 className="season-title">{context.currentWindow.australiaTitle}</h2>
-            <p className="season-copy">{localDescription}</p>
           </section>
 
-          <section className="card">
+          <section className="card full-width-card">
             <p className="season-kicker">Dharawal Seasonal Calendar</p>
             <h2 className="season-title">{dharawalSeason.title}</h2>
-            <p className="season-copy">
-              {dharawalSeason.monthsLabel}. {dharawalSeason.summary}
-            </p>
+            <div className="date-chip">{dharawalSeason.monthsLabel}</div>
             <ul className="indicator-list">
               {dharawalSeason.indicators.map((indicator) => (
                 <li key={indicator}>{indicator}</li>
               ))}
             </ul>
+            <p className="footer-note">
+              Source:{" "}
+              <a href={DHARAWAL_CALENDAR_SOURCE} target="_blank" rel="noreferrer">
+                Bureau of Meteorology Dharawal calendar
+              </a>
+            </p>
           </section>
         </div>
 

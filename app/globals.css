@@ -278,6 +278,10 @@ textarea {
   margin-top: 0.35rem;
 }
 
+.full-width-card {
+  grid-column: 1 / -1;
+}
+
 @media (min-width: 720px) {
   .page-shell {
     padding-top: 2rem;
