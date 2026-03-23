@@ -51,12 +51,6 @@ export default async function HomePage() {
                 <li key={indicator}>{indicator}</li>
               ))}
             </ul>
-            <p className="footer-note">
-              Source:{" "}
-              <a href={DHARAWAL_CALENDAR_SOURCE} target="_blank" rel="noreferrer">
-                Bureau of Meteorology Dharawal calendar
-              </a>
-            </p>
           </section>
         </div>
 
